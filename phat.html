@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>คิดถึงนะค่ะ 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pridi:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffe4ec, #e0f7fa);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Pridi', serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 4.5em;
+      background: linear-gradient(270deg, #ff6ec4, #7873f5, #00d2ff, #ff6ec4);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 6s ease infinite, shimmer 3s infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes gradientText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes shimmer {
+      0% {
+        text-shadow: 0 0 5px rgba(255,255,255,0.5);
+      }
+      50% {
+        text-shadow: 0 0 15px rgba(255,255,255,0.9), 0 0 30px #ff7eb3;
+      }
+      100% {
+        text-shadow: 0 0 5px rgba(255,255,255,0.5);
+      }
+    }
+
+    /* หัวใจลอยขึ้น */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff5da2;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+      opacity: 0.8;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff5da2;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: -30px;
+        opacity: 0;
+        transform: translateX(0) scale(1) rotate(45deg);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        transform: translateX(-50px) scale(1.5) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>คิดถึงนะค่ะ 💖</h1>
+
+  <!-- หัวใจหลายดวง -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = (Math.random() * 5) + 's';
+      heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
